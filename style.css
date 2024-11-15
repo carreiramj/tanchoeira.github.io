@@ -1,9 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Estilos gerais */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -14,80 +9,94 @@ body {
     padding: 0;
 }
 
-header {
-    background-color: rgba(139, 0, 0, 0.8); /* fundo translúcido para contraste */
+h1, h2 {
+    font-size: 2.5rem;
     color: #fff;
-    padding: 1em;
     text-align: center;
 }
 
-header p {
-    font-size: 1.1em;
-    margin-top: 0.5em;
-    font-style: italic;
-}
-
-nav a {
+p {
+    font-size: 1.2rem;
     color: #fff;
-    margin: 0 15px;
-    text-decoration: none;
+    text-align: center;
 }
 
-nav a:hover {
-    text-decoration: underline;
-}
-
-main {
+/* Seleção de idioma */
+.language-selection {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
-    max-width: 800px;
-    margin: auto;
-    background-color: rgba(255, 255, 255, 0.9); /* fundo branco levemente translúcido */
+    border-radius: 8px;
 }
 
-h2 {
-    color: #8b0000;
+.buttons {
     margin-top: 20px;
 }
 
-section {
-    margin-bottom: 20px;
+.btn {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
 }
 
+.btn:hover {
+    background-color: #45a049;
+}
+
+/* Footer */
 footer {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
     text-align: center;
-    padding: 1em;
-    background-color: rgba(139, 0, 0, 0.8); /* fundo translúcido */
     color: #fff;
-    margin-top: 20px;
 }
 
-.social-media {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+footer p {
+    margin-bottom: 10px;
 }
 
 .social-icon {
-    width: 30px;
-    height: 30px;
-    transition: transform 0.3s;
+    width: 30px;    /* Ajuste o tamanho conforme necessário */
+    height: auto;   /* Mantém a proporção original das imagens */
+    margin: 5px;    /* Adiciona um pequeno espaço entre os ícones */
 }
 
-.social-icon:hover {
-    transform: scale(1.1);
+footer a {
+    margin: 0 10px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+/* Adicionando animação de transição suave */
+a {
+    transition: transform 0.3s ease;
 }
 
-form label {
-    margin-top: 10px;
+a:hover {
+    transform: scale(1.2); /* Aumenta o tamanho do ícone ao passar o mouse */
 }
 
-form input, form button {
-    padding: 10px;
-    margin-top: 5px;
+/* Responsividade para dispositivos móveis */
+@media screen and (max-width: 600px) {
+    .language-selection {
+        width: 80%;
+        padding: 15px;
+    }
+
+    .btn {
+        font-size: 1rem;
+    }
+
+    .social-icon {
+        width: 25px;  /* Reduz o tamanho dos ícones em telas pequenas */
+    }
 }
+
