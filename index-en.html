@@ -3,41 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanchoeira - Artisan Wines</title>
+    <title>Welcome to Tanchoeira</title>
     <link rel="stylesheet" href="style.css">
+    
+    <!-- AOS Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 </head>
 <body>
     <header>
-        <h1>Tanchoeira</h1>
-        <p>Artisan, natural, and sustainable wines</p>
-        <nav>
-            <a href="#about-us">About Us</a>
-            <a href="#our-brand">Our Brand</a>
-        </nav>
+        <h1 data-aos="fade-down">Welcome to Tanchoeira</h1>
     </header>
     <main>
-        <section id="about-us">
+        <section data-aos="fade-up">
             <h2>About Us</h2>
-            <p>Tanchoeira is a winery dedicated to producing artisan and sustainable wines, respecting the environment and valuing traditions. Our mission is to bring our customers high-quality wines, produced responsibly and with respect for nature.</p>
+            <p>Tanchoeira is a wine brand that celebrates tradition and sustainability. We produce wines through a handcrafted process, without the use of chemicals, respecting the environment with biodegradable and recyclable materials. Our carbon footprint is minimal because we believe in caring for the planet for future generations.</p>
         </section>
-        <section id="our-brand">
+        <section data-aos="fade-up" data-aos-delay="200">
             <h2>Our Brand</h2>
-            <p>At Tanchoeira, we believe that a good wine is more than just a drink: it's an expression of history, culture, and commitment to the environment. Our production process is entirely manual and traditional, following ancient practices that avoid the use of chemicals and preserve the authenticity of grape flavors.</p>
+            <p>Our wines result from a dedicated process where every detail is carefully managed to ensure the best quality. Tanchoeira is more than a brand: it is a commitment to authenticity and sustainability.</p>
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Tanchoeira. All rights reserved.</p>
-        <div class="social-media">
-            <a href="https://www.instagram.com/yourinstagram" target="_blank">
-                <img src="instagram.png" alt="Instagram" class="social-icon">
-            </a>
-            <a href="https://www.facebook.com/yourfacebook" target="_blank">
-                <img src="facebook.png" alt="Facebook" class="social-icon">
-            </a>
-            <a href="mailto:contact@tanchoeira.com">
-                <img src="mail.png" alt="E-mail" class="social-icon">
-            </a>
-        </div>
+        <p>Follow us:</p>
+        <a href="https://www.instagram.com/" target="_blank"><img src="instagram.png" alt="Instagram"></a>
+        <a href="https://www.facebook.com/" target="_blank"><img src="facebook.png" alt="Facebook"></a>
+        <a href="mailto:info@tanchoeira.com"><img src="mail.png" alt="Email"></a>
     </footer>
+
+    <!-- AOS Script -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,  // Define the duration of the animation
+            easing: 'ease',  // Defines the easing function
+            once: true        // Whether animation happens only once or every time the element comes into view
+        });
+    </script>
 </body>
 </html>
+
