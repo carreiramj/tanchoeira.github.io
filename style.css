@@ -7,18 +7,25 @@ body {
     background-size: cover;
     margin: 0;
     padding: 0;
+    text-align: center; /* Centraliza todos os textos por padrão */
 }
 
 h1, h2 {
     font-size: 2.5rem;
     color: #fff;
-    text-align: center;
+    display: inline-block; /* Apenas o texto recebe o fundo */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo preto transparente */
+    padding: 10px;
+    border-radius: 5px;
 }
 
 p {
     font-size: 1.2rem;
     color: #fff;
-    text-align: center;
+    display: inline-block; /* Apenas o texto recebe o fundo */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo preto transparente */
+    padding: 10px;
+    border-radius: 5px;
 }
 
 /* Seleção de idioma */
@@ -27,7 +34,7 @@ p {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
+    text-align: center; /* Centraliza o conteúdo dentro dessa área */
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 8px;
@@ -54,25 +61,33 @@ p {
 
 /* Footer */
 footer {
-    position: absolute;
-    bottom: 20px;
+    position: fixed;
+    bottom: 0;
     width: 100%;
-    text-align: center;
+    text-align: center; /* Centraliza o conteúdo no rodapé */
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro para destacar o rodapé */
+    padding: 10px 0;
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 footer p {
     margin-bottom: 10px;
 }
 
-.social-icon {
-    width: 30px;    /* Ajuste o tamanho conforme necessário */
-    height: auto;   /* Mantém a proporção original das imagens */
-    margin: 5px;    /* Adiciona um pequeno espaço entre os ícones */
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-footer a {
-    margin: 0 10px;
+/* Alteração feita: Tamanho dos ícones no footer */
+footer a img {
+    width: 40px;  /* Tamanho do ícone aumentado para 40px */
+    height: 40px; /* Proporção mantida */
+    margin: 0 15px; /* Espaçamento entre os ícones */
 }
 
 /* Adicionando animação de transição suave */
@@ -95,8 +110,8 @@ a:hover {
         font-size: 1rem;
     }
 
-    .social-icon {
-        width: 25px;  /* Reduz o tamanho dos ícones em telas pequenas */
+    footer a img {
+        width: 40px;  /* Mantendo o tamanho de 40px para dispositivos móveis */
+        height: 40px; /* Proporção mantida */
     }
 }
-
