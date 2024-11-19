@@ -1,62 +1,75 @@
-/* Estilos gerais */
+/* General styles */
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background: url('close-up-wine-stain-detail.jpg') no-repeat center center fixed;
-    background-size: cover;
     margin: 0;
     padding: 0;
-    text-align: center; /* Centraliza todos os textos por padrão */
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
-h1, h2 {
-    font-size: 2.5rem;
-    color: #fff;
-    display: inline-block; /* Apenas o texto recebe o fundo */
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo preto transparente */
-    padding: 10px;
-    border-radius: 5px;
+/* Full-screen header */
+.full-screen-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+    background: #000;
+    transition: opacity 0.5s ease-in-out;
 }
 
-p {
-    font-size: 1.2rem;
-    color: #fff;
-    display: inline-block; /* Apenas o texto recebe o fundo */
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo preto transparente */
-    padding: 10px;
-    border-radius: 5px;
+.full-screen-header .header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Seleção de idioma */
-.language-selection {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center; /* Centraliza o conteúdo dentro dessa área */
-    background-color: rgba(0, 0, 0, 0.5);
+/* Main content */
+main {
+    margin-top: 100vh;
     padding: 20px;
-    border-radius: 8px;
 }
 
-.buttons {
-    margin-top: 20px;
+section.image-text-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espaçamento uniforme */
+    padding: 50px 20px;
+    gap: 20px;
 }
 
-.btn {
-    display: inline-block;
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    margin: 5px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
+.image-text-section.reverse {
+    flex-direction: row-reverse;
 }
 
-.btn:hover {
-    background-color: #45a049;
+.image-container {
+    flex: 1 1 45%; /* Reduzido para garantir mais espaço */
+    max-width: 45%; /* Máximo 45% */
+}
+
+.image-container img.section-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.text-container {
+    flex: 1 1 45%; /* Reduzido para corresponder ao tamanho da imagem */
+    max-width: 45%; /* Máximo 45% */
+    padding: 20px;
+    text-align: justify;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.text-container p {
+    margin: 0;
+    line-height: 1.8;
+    font-size: 1rem; /* Tamanho ajustado */
 }
 
 /* Footer */
@@ -64,8 +77,8 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    text-align: center; /* Centraliza o conteúdo no rodapé */
-    background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro para destacar o rodapé */
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 10px 0;
     color: #fff;
     display: flex;
@@ -73,45 +86,20 @@ footer {
     align-items: center;
 }
 
-footer p {
-    margin-bottom: 10px;
-}
-
-footer .social-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Alteração feita: Tamanho dos ícones no footer */
 footer a img {
-    width: 40px;  /* Tamanho do ícone aumentado para 40px */
-    height: 40px; /* Proporção mantida */
-    margin: 0 15px; /* Espaçamento entre os ícones */
+    width: 40px;
+    height: 40px;
+    margin: 0 15px;
 }
 
-/* Adicionando animação de transição suave */
-a {
-    transition: transform 0.3s ease;
-}
-
-a:hover {
-    transform: scale(1.2); /* Aumenta o tamanho do ícone ao passar o mouse */
-}
-
-/* Responsividade para dispositivos móveis */
-@media screen and (max-width: 600px) {
-    .language-selection {
-        width: 80%;
-        padding: 15px;
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    section.image-text-section {
+        flex-direction: column; /* Empilha em telas menores */
+        gap: 40px;
     }
 
-    .btn {
-        font-size: 1rem;
-    }
-
-    footer a img {
-        width: 40px;  /* Mantendo o tamanho de 40px para dispositivos móveis */
-        height: 40px; /* Proporção mantida */
+    .image-container, .text-container {
+        max-width: 100%;
     }
 }

@@ -5,28 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bem-vindo à Tanchoeira</title>
     <link rel="stylesheet" href="style.css">
-    
-    <!-- AOS Stylesheet -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 </head>
+
 <body>
-    <header>
-        <h1 data-aos="fade-down">Bem-vindo à Tanchoeira</h1>
+
+    <header class="full-screen-header">
+        <img src="render_001.png" alt="Tanchoeira Render" class="header-image">
     </header>
     <main>
-        <section data-aos="fade-up">
-            <h2>Quem Somos</h2>
-            <p>A Tanchoeira é uma marca de vinhos que celebra a tradição e a sustentabilidade. Produzimos vinhos de forma artesanal, sem a utilização de químicos, respeitando o meio ambiente com materiais biodegradáveis e recicláveis. A nossa pegada de carbono é reduzida, porque acreditamos em cuidar do planeta para as próximas gerações.</p>
+        <!-- Primeira seção com imagem à esquerda e texto à direita -->
+
+        <section class="image-text-section" data-aos="fade-up">
+            <div class="image-container left">
+                <img src="render_002.png" alt="Tanchoeira Left" class="section-image">
+            </div>
+            <div class="text-container right">
+                <p>
+                    A Tanchoeira é uma marca de vinhos que celebra a tradição e a sustentabilidade. Produzimos vinhos de forma artesanal, sem a utilização de químicos, respeitando o meio ambiente com materiais biodegradáveis e recicláveis. A nossa pegada de carbono é reduzida, porque acreditamos em cuidar do planeta para as próximas gerações.
+                </p>
+            </div>
         </section>
-        <section data-aos="fade-up" data-aos-delay="200">
-            <h2>A Nossa Marca</h2>
-            <p>Os nossos vinhos são o resultado de um processo dedicado, onde cada detalhe é cuidadosamente controlado para garantir a melhor qualidade.</p>
 
-<p>A Tanchoeira é mais do que uma marca: é um compromisso com a autenticidade e a sustentabilidade.</p>
-<br>
-<br>
-<br>
-
+        <!-- Segunda seção com imagem à direita e texto à esquerda -->
+        <section class="image-text-section reverse" data-aos="fade-up" data-aos-delay="200">
+            <div class="text-container left">
+                <p>
+                    Os nossos vinhos são o resultado de um processo dedicado, onde cada detalhe é cuidadosamente controlado para garantir a melhor qualidade.
+                    <br><br>
+                    A Tanchoeira é mais do que uma marca: é um compromisso com a autenticidade e a sustentabilidade.
+                </p>
+            </div>
+            <div class="image-container right">
+                <img src="render_003.png" alt="Tanchoeira Right" class="section-image">
+            </div>
         </section>
     </main>
     <footer>
@@ -35,18 +47,27 @@
         <a href="mailto:info@tanchoeira.com"><img src="mail.png" alt="Email"></a>
     </footer>
     
-    <!-- AOS Script -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init({
-            duration: 1000,  // Define the duration of the animation
-            easing: 'ease',  // Defines the easing function
-            once: true        // Whether animation happens only once or every time the element comes into view
+            duration: 1000,
+            easing: 'ease',
+            once: true
+        });
+
+        // Logic for hiding header on scroll
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('.full-screen-header');
+            const scrollPosition = window.scrollY;
+
+            if (scrollPosition > 0) {
+                header.style.opacity = '0';
+                header.style.pointerEvents = 'none';
+            } else {
+                header.style.opacity = '1';
+                header.style.pointerEvents = 'all';
+            }
         });
     </script>
-</body>
-</html>
-
-    </footer>
 </body>
 </html>
