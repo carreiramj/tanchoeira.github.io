@@ -1,41 +1,111 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imagem Responsiva</title>
-    <style>
-        /* Estilos gerais */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f4f4f4;
-        }
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
 
-        /* Imagem responsiva */
-        img {
-            width: 100%; /* Ocupa toda a largura do contêiner */
-            height: auto; /* Ajusta a altura proporcionalmente */
-            max-width: 100%; /* Evita que ultrapasse o tamanho original */
-            border-radius: 10px; /* Bordas arredondadas para um visual moderno */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra sutil */
-        }
+/* Full-screen header */
+.full-screen-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+    background: #000;
+    transition: opacity 0.5s ease-in-out;
+}
 
-        /* Ajuste em dispositivos menores */
-        @media screen and (max-width: 768px) {
-            img {
-                border-radius: 5px; /* Bordas menos arredondadas em telas menores */
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Imagem responsiva -->
-    <img src="https://via.placeholder.com/1200x800" alt="Imagem Responsiva">
-</body>
-</html>
+.full-screen-header .header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Main content */
+main {
+    margin-top: 100vh;
+    padding: 20px;
+}
+
+section.image-text-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espaçamento uniforme */
+    padding: 50px 20px;
+    gap: 20px;
+}
+
+.image-text-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.image-container {
+    flex: 1 1 45%; /* Reduzido para garantir mais espaço */
+    max-width: 45%; /* Máximo 45% */
+}
+
+.image-container img.section-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.text-container {
+    flex: 1 1 45%; /* Reduzido para corresponder ao tamanho da imagem */
+    max-width: 45%; /* Máximo 45% */
+    padding: 20px;
+    text-align: justify;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.text-container p {
+    margin: 0;
+    line-height: 1.8;
+    font-size: 1rem; /* Tamanho ajustado */
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px 0;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a img {
+    width: 40px;
+    height: 40px;
+    margin: 0 15px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    section.image-text-section {
+        flex-direction: column; /* Empilha em telas menores */
+        gap: 40px;
+    }
+
+    .image-container, .text-container {
+        max-width: 100%;
+    }
+
+    /* Aplicando o clip-path ao header apenas em smartphones */
+    .full-screen-header .header-image {
+        clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+    }
+}
+
