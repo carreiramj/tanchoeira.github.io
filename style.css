@@ -22,7 +22,8 @@ body {
 .full-screen-header .header-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Ensures the image fills the header */
+    transition: clip-path 0.3s ease;
 }
 
 /* Main content */
@@ -34,7 +35,7 @@ main {
 section.image-text-section {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Espaçamento uniforme */
+    justify-content: space-between;
     padding: 50px 20px;
     gap: 20px;
 }
@@ -44,8 +45,8 @@ section.image-text-section {
 }
 
 .image-container {
-    flex: 1 1 45%; /* Reduzido para garantir mais espaço */
-    max-width: 45%; /* Máximo 45% */
+    flex: 1 1 45%;
+    max-width: 45%;
 }
 
 .image-container img.section-image {
@@ -56,8 +57,8 @@ section.image-text-section {
 }
 
 .text-container {
-    flex: 1 1 45%; /* Reduzido para corresponder ao tamanho da imagem */
-    max-width: 45%; /* Máximo 45% */
+    flex: 1 1 45%;
+    max-width: 45%;
     padding: 20px;
     text-align: justify;
     background-color: rgba(0, 0, 0, 0.6);
@@ -69,7 +70,7 @@ section.image-text-section {
 .text-container p {
     margin: 0;
     line-height: 1.8;
-    font-size: 1rem; /* Tamanho ajustado */
+    font-size: 1rem;
 }
 
 /* Footer */
@@ -95,17 +96,18 @@ footer a img {
 /* Responsive styles */
 @media screen and (max-width: 768px) {
     section.image-text-section {
-        flex-direction: column; /* Empilha em telas menores */
+        flex-direction: column;
         gap: 40px;
     }
 
-    .image-container, .text-container {
+    .image-container,
+    .text-container {
         max-width: 100%;
     }
 
-    /* Aplicando o clip-path ao header apenas em smartphones */
+    /* Clip path specifically for the header image on smartphones */
     .full-screen-header .header-image {
-        clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+        clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%);
+        /* Adjust the polygon to the section you want visible */
     }
 }
-
