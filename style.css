@@ -107,7 +107,7 @@ footer a img {
 
     /* Clip path specifically for the header image on smartphones */
     .full-screen-header .header-image {
-        clip-path: polygon(40% 0%, 60% 0%, 90% 100%, 10% 100%);
+        clip-path: polygon(60% 0%, 40% 0%, 90% 100%, 10% 100%);
         /* Adjust the polygon to the section you want visible */
     }
 }
