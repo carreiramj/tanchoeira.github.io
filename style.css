@@ -23,21 +23,26 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Ensures the image fills the header */
+    transform: scale(1.5); /* Adjust the scale to ensure the clipped area fills the screen */
+    object-position: 65% center; /* Adjust position to center the visible part of the image */
+
     transition: clip-path 0.3s ease;
 }
 
 /* Main content */
 main {
     margin-top: 100vh;
-    padding: 20px;
+    padding: 0; /* No padding to align the images perfectly */
 }
 
 section.image-text-section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 50px 20px;
+    padding: 0;
+    height: 100vh; /* Ensure the section takes full screen height */
     gap: 20px;
+    position: relative; /* Positioning for overlay text */
 }
 
 .image-text-section.reverse {
@@ -45,23 +50,26 @@ section.image-text-section {
 }
 
 .image-container {
-    flex: 1 1 45%;
-    max-width: 45%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .image-container img.section-image {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    height: 100%;
+    object-fit: cover; /* Ensure the image fills the section */
 }
 
 .text-container {
-    flex: 1 1 45%;
-    max-width: 45%;
+    position: relative; /* To place text over the image */
+    z-index: 10;
+    max-width: 50%;
     padding: 20px;
     text-align: justify;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
     color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -97,20 +105,16 @@ footer a img {
 @media screen and (max-width: 768px) {
     section.image-text-section {
         flex-direction: column;
-        gap: 40px;
+        gap: 0;
+        height: auto; /* Allow content to adjust */
     }
 
-    .image-container,
     .text-container {
-        max-width: 100%;
+        max-width: 100%; /* Text spans full width */
     }
 
-    /* Clip path specifically for the header image on smartphones */
-    .full-screen-header .header-image {
-        object-fit: cover; /* Ensures the image covers the container */
-        width: 100%; /* Ensure the image width matches the viewport */
-        height: 100%; /* Ensure the image height matches the viewport */
-        transform: scale(1.5); /* Adjust the scale to ensure the clipped area fills the screen */
-        object-position: 65% center; /* Adjust position to center the visible part of the image */
+    .image-container img.section-image {
+        object-position: center; /* Center image for smaller screens */
     }
 }
+
