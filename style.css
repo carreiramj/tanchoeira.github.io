@@ -107,7 +107,12 @@ footer a img {
 
     /* Clip path specifically for the header image on smartphones */
     .full-screen-header .header-image {
-        clip-path: polygon(60% 0%, 80% 0%, 80% 100%, 60% 100%);
+        clip-path: polygon(90% 0%, 40% 0%, 40% 100%, 90% 100%);
         /* Adjust the polygon to the section you want visible */
+        object-fit: cover; /* Ensures the image covers the container */
+        width: 100%; /* Ensure the image width matches the viewport */
+        height: 100%; /* Ensure the image height matches the viewport */
+        transform: scale(1.5); /* Adjust the scale to ensure the clipped area fills the screen */
+        object-position: 65% center; /* Adjust position to center the visible part of the image */
     }
 }
