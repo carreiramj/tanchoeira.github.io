@@ -113,7 +113,7 @@ footer a img {
 
 
 /* Responsive styles */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
     section.image-text-section {
         flex-direction: column;
         gap: 0;
@@ -123,11 +123,14 @@ footer a img {
     .text-container {
         max-width: 80%; /* Text spans full width */
     }
-
+    .text-container p {
+        font-size: .8rem; /* Adjust font size */
+    }
     .image-container img.section-image {
         object-position: center; /* Center image for smaller screens */
     }
 }
+
 
 
 
