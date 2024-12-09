@@ -1,20 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tanchoeira - Escolha o Idioma</title>
     <link rel="stylesheet" href="style.css">
+
     <style>
+
         /* Aplicar a imagem de fundo ao body */
-        body {
-            background-image: url('test.png');  /* Imagem de fundo */
-            background-size: cover;            /* Garantir que a imagem cubra toda a tela */
-            background-position: center;       /* Centralizar a imagem de fundo */
-            background-repeat: no-repeat;      /* Evitar repetição da imagem */
-            margin: 0;                         /* Remover a margem padrão */
-            height: 100vh;                     /* Fazer com que o body ocupe toda a altura da janela */
+        /* Default styling (as provided) */
+        body 
+        {
+            background-image: url('test.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            height: 100vh;
         }
+
+        /* Adjustments for screens smaller than 768px (tablets and below) */
+        @media (max-width: 768px) 
+        {
+            body {
+                background-size: contain; /* Ensures the full image fits within the viewport */
+                background-position: top; /* Aligns image to the top */
+            }
+        }
+
+        /* Adjustments for very small screens (e.g., phones) */
+        @media (max-width: 480px)
+        {
+            body {
+                background-size: 150%; /* Slightly zoom in for better visual focus */
+                background-position: center;
+            }
+        }
+
 
         .language-selection {
             text-align: center;                /* Centralizar o texto dentro do container */
@@ -45,6 +69,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="language-selection">
         <h1>Bem-vindo à Tanchoeira <br> Welcome to Tanchoeira</h1> <!-- Versão em português e inglês -->
@@ -56,4 +81,5 @@
         </div>
     </div>
 </body>
+
 </html>
