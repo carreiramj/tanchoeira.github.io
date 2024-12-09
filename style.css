@@ -37,53 +37,40 @@ main {
 
 section.image-text-section {
     display: flex;
+    flex-direction: column; /* Stack the image and text vertically */
     align-items: center;
-    justify-content: space-between;
+    justify-content: start; /* Align content to the top */
     padding: 0;
     width: 100%;
-    height: 100vh; /* Ensure the section takes full screen height */
-    min-height: 300px; /* Set a maximum height if needed */
-    gap: 20px;
-    position: relative; /* Positioning for overlay text */
-}
-
-.image-text-section.reverse {
-    flex-direction: row-reverse;
+    min-height: 300px; /* Minimum height if needed */
+    gap: 20px; /* Space between image and text */
 }
 
 .image-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
+    width: 100%; /* Make the image take full width */
+    height: auto; /* Ensure the height adjusts to the image aspect ratio */
 }
 
 .image-container img.section-image {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensure the image fills the section */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image fills the container if cropped */
 }
 
 .text-container {
-    position: absolute; /* To place text over the image */
-    top: 0; /* Align the container to the top */
-    left: 0; /* Align the container to the left */
-    z-index: 10;
-    height: auto; /* Default to content height */
-    max-width: 10%;
-    min-height: 30px; /* Set a min height if needed */
-    padding: 10px 25px; /**/
-    text-align: left;
+    width: 100%; /* Text container spans full width */
+    padding: 100px 100px; /* Padding for better spacing */
+    text-align: center; /* Center the text horizontally */
     background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-    color: #fff;
+    color: #fff; /* White text */
     border-radius: 10px;
-    /*box-shadow: 0 4px 10px rgba(0, 0, 0, 05);*/
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Optional shadow for better visibility */
 }
 
-
 .text-container p {
-    margin:0;
-    line-height: 1; /*altura de linha de texto*/
-    font-size: .9rem; /*tamanho de letra*/
+    margin: 0;
+    line-height: 1.5; /* Adjust line height for better readability */
+    font-size: 2rem; /* Font size */
 }
 
 /* Footer */
@@ -124,16 +111,9 @@ footer a img {
         max-width: 80%; /* Text spans full width */
     }
     .text-container p {
-        font-size: .8rem; /* Adjust font size */
+        font-size: 1.5rem; /* Adjust font size */
     }
     .image-container img.section-image {
         object-position: center; /* Center image for smaller screens */
     }
 }
-
-
-
-
-
-
-
